@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Number Base Converter/task" />
+            <option value="$PROJECT_DIR$/Problems/Average" />
+            <option value="$PROJECT_DIR$/Problems/Deposit" />
+            <option value="$PROJECT_DIR$/Problems/Multiplication" />
+            <option value="$PROJECT_DIR$/Problems/Right Rotation" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Area of a circle" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Difference between two doubles" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Distance" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Find X" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Theory" />
+            <option value="$PROJECT_DIR$/Topics/For loop and ranges/Check the order" />
+            <option value="$PROJECT_DIR$/Topics/For loop and ranges/Count the numbers" />
+            <option value="$PROJECT_DIR$/Topics/For loop and ranges/Fizz Buzz" />
+            <option value="$PROJECT_DIR$/Topics/For loop and ranges/The longest sequence" />
+            <option value="$PROJECT_DIR$/Topics/For loop and ranges/The maximum pairwise product" />
+            <option value="$PROJECT_DIR$/Topics/For loop and ranges/The minimum value of N numbers" />
+            <option value="$PROJECT_DIR$/Topics/For loop and ranges/The product of numbers from a to b" />
+            <option value="$PROJECT_DIR$/Topics/For loop and ranges/The roots of equation" />
+            <option value="$PROJECT_DIR$/Topics/For loop and ranges/The sum of N numbers" />
+            <option value="$PROJECT_DIR$/Topics/For loop and ranges/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Mutable Set/Combination" />
+            <option value="$PROJECT_DIR$/Topics/Mutable Set/Division problem" />
+            <option value="$PROJECT_DIR$/Topics/Mutable Set/Filter" />
+            <option value="$PROJECT_DIR$/Topics/Mutable Set/Subtraction" />
+            <option value="$PROJECT_DIR$/Topics/Mutable Set/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Mutable Set/To clear or not to clear" />
+            <option value="$PROJECT_DIR$/Topics/Named arguments/Car price" />
+            <option value="$PROJECT_DIR$/Topics/Named arguments/Car speed" />
+            <option value="$PROJECT_DIR$/Topics/Named arguments/Deposit" />
+            <option value="$PROJECT_DIR$/Topics/Named arguments/Greeting" />
+            <option value="$PROJECT_DIR$/Topics/Named arguments/Perimeter" />
+            <option value="$PROJECT_DIR$/Topics/Named arguments/Theory" />
+            <option value="$PROJECT_DIR$/util" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

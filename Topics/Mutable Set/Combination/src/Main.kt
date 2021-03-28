@@ -1,0 +1,1 @@
+fun solution(setSource: Set<String>, arraySource: Array<String>) = (setSource + arraySource).toMutableSet()

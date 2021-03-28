@@ -1,0 +1,64 @@
+<html>
+ <head></head>
+ <body>
+  <p>When we invoke a function that has parameters, we can pass arguments by the names of these parameters. This approach can improve the readability of your code, especially if a function has lots of parameters. Also, it is a convenient way to change the order of arguments passed in a function call.</p> 
+  <h2 style="text-align: center;">Improving code readability</h2> 
+  <p>Imagine a cashier who sells cinema tickets, and within a single day the price does not change. You need to calculate how much money will be in the cash desk at the end of the work day. Here is a function that has three parameters:</p> 
+  <pre><code class="language-kotlin">fun calcEndDayAmount(startAmount: Int, ticketPrice: Int, soldTickets: Int) =
+        startAmount + ticketPrice * soldTickets</code></pre> 
+  <ul> 
+   <li><code class="language-kotlin">startAmount</code> is a sum in the cash desk before starting this working day.</li> 
+   <li><code class="language-kotlin">ticketPrice</code> is the price of one ticket today.</li> 
+   <li><code class="language-kotlin">soldTickets</code> is the number of tickets sold on this working day.</li> 
+  </ul> 
+  <p>Since it is a regular function, let's invoke it as we usually do.</p> 
+  <pre><code class="language-kotlin">val amount = calcEndDayAmount(1000, 10, 500)  // 6000</code></pre> 
+  <p>This works fine, although there is one problem: unclear arguments. Of course, we can declare well-named variables and pass them, but sometimes you have to work with literals, not variables. With <strong>named arguments,</strong> we can make the code much more readable. To fix this problem, you may name<em> </em>each argument of this function when calling it:</p> 
+  <pre><code class="language-kotlin">val amount = calcEndDayAmount(
+    startAmount = 1000,
+    ticketPrice = 10,
+    soldTickets = 500
+)  // 6000</code></pre> 
+  <p>Now, the code is easy to understand!</p> 
+  <h2 style="text-align: center;">Reordering arguments</h2> 
+  <p>Using named arguments, you can change the order of the arguments in a function call. Just specify the names in any order needed:</p> 
+  <pre><code class="language-kotlin">val amount = calcEndDayAmount(
+    ticketPrice = 10,
+    soldTickets = 500,
+    startAmount = 1000
+)  // 6000</code></pre> 
+  <h2 style="text-align: center;">Mixing named and positional arguments</h2> 
+  <p>You can also call a function with named and regular (positional) arguments, as long as all the named arguments are placed after all the positional ones.</p> 
+  <pre><code class="language-kotlin">calcEndDayAmount(1000, ticketPrice = 10, soldTickets = 500)  // 6000</code></pre> 
+  <p>Since Kotlin 1.4 you may use the positional arguments after the named arguments, but you need to keep the order of arguments. For example: </p> 
+  <pre><code class="language-kotlin">calcEndDayAmount(ticketPrice = 10, 500, 1000)   // OK
+calcEndDayAmount(startAmount = 1000, 10, 500)   // Incorrect invocation!
+
+
+calcEndDayAmount(soldTickets = 500, ticketPrice = 10, startAmount = 500) // OK
+calcEndDayAmount(soldTickets = 500, ticketPrice = 10, 500)  // Incorrect invocation!</code></pre> 
+  <h2 style="text-align: center;">Default and named arguments</h2> 
+  <p>It is convenient to use named and default arguments together. As you probably know, with default arguments, sometimes Kotlin does not understand which parameters to assign.</p> 
+  <p>Let's modify the previous function making the first parameter optional:</p> 
+  <pre><code class="language-kotlin">fun calcEndDayAmount(startAmount: Int = 0, ticketPrice: Int, soldTickets: Int) =
+        startAmount + ticketPrice * soldTickets</code></pre> 
+  <p>Suppose we would like to invoke this function passing only the two last parameters, but it does not work:</p> 
+  <pre><code class="language-kotlin">val amount = calcEndDayAmount(10, 500)  // It does not work:
+                                        // no value passed for soldTickets</code></pre> 
+  <p>Here <samp>10</samp> is assigned to the first optional argument <code class="language-kotlin">startAmount</code>, not to the second parameter <code class="language-kotlin">ticketPrice</code>. </p> 
+  <p>To invoke this function as you want it, we must use named arguments:</p> 
+  <pre><code class="language-kotlin">val amount = calcEndDayAmount(ticketPrice = 10, soldTickets = 500)  // 5000</code></pre> 
+  <p>Now it works!</p> 
+  <h2 style="text-align: center;">Named arguments and default values</h2> 
+  <p>The default values for the parameters of a function are not necessarily constant. They can also be another named argument or a function.</p> 
+  <p>For example:</p> 
+  <pre><code class="language-kotlin">fun sum2(a: Int, b: Int = a) = a + b
+ 
+sum2(1)    // 1 + 1
+sum2(2, 3) // 2 + 3</code></pre> 
+  <p>The following function declaration is incorrect since the parameter <code class="language-kotlin">b</code> is uninitialized when used:</p> 
+  <pre><code class="language-kotlin">fun sum2(a: Int = b, b: Int) = a + b</code></pre> 
+  <h2 style="text-align: center;">Conclusion</h2> 
+  <p>To sum it all up, use <strong>named arguments</strong>, and use them wisely, not only to improve code readability but also change the order of arguments when some parameters have default values.</p>
+ </body>
+</html>

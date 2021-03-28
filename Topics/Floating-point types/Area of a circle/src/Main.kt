@@ -1,0 +1,1 @@
+fun main() = readLine()!!.toInt().let { 3.1415 * it * it }.let(::println)

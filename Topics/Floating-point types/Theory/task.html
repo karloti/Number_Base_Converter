@@ -1,0 +1,68 @@
+<html>
+ <head></head>
+ <body>
+  <p>We often use real numbers to perform various kinds of calculations in science, statistics, engineering, and many other fields. Kotlin has two basic types to represent such numbers: <code class="language-kotlin">Float</code> and <code class="language-kotlin">Double</code>. They are called <strong>floating-point types</strong>. In fact, these types cannot represent an arbitrary real number because they support only a limited number of significant decimal digits (6-7 for <code class="language-kotlin">Float</code>, and 14-16 for <code class="language-kotlin">Double</code>). In addition, <code class="language-kotlin">Double</code> can represent a wider range of numbers than <code class="language-kotlin">Float</code>.</p> 
+  <p>In practice, programmers mostly use the <code class="language-kotlin">Double</code> type. We will mainly consider this type, and we also recommend using it to solve our code challenges. However, all the information below is true for the <code class="language-kotlin">Float</code> type as well.</p> 
+  <h2 style="text-align: center;">Arithmetic operations with floating-point types</h2> 
+  <p>It is easy to create a variable with <code class="language-kotlin">Double</code>:</p> 
+  <pre><code class="language-kotlin">val one = 1.0
+val negNumber = -1.75
+
+val pi = 3.1415</code></pre> 
+  <p>You to create a <code class="language-kotlin">Float</code> variable this way:</p> 
+  <pre><code class="language-kotlin">val b: Float = 8.75
+
+val e = 2.71828f</code></pre> 
+  <p>You can perform arithmetic operations with variables of the <code class="language-kotlin">Double</code> type:</p> 
+  <pre><code class="language-kotlin">val number = one + 1.5 // 2.5
+val c = b + negNumber  // 7, Double, the type is inferred from the context
+
+val squaredPi = pi * pi // 9.86902225</code></pre> 
+  <p>For fractional operands, the operator <code class="language-kotlin">/</code> performs division, not an integer division.</p> 
+  <pre><code class="language-kotlin">println(squaredPi / 2) // prints 4.934511125</code></pre> 
+  <h2 style="text-align: center;">Errors during computation</h2> 
+  <p>Be careful: operations with floating-point numbers can produce an inaccurate result:</p> 
+  <pre><code class="language-java">println(3.3 / 3) // prints 1.0999999999999999</code></pre> 
+  <p>Errors can accumulate during computation.</p> 
+  <pre><code class="language-java">val num = 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1
+println(num) // it prints 0.9999999999999999</code></pre> 
+  <p>In the following lessons, we will find out how to deal with this problem. For now, just take it into consideration.</p> 
+  <h2 style="text-align: center;">Reading numbers</h2> 
+  <p>You can use <code class="language-kotlin">Scanner</code> to read <code class="language-kotlin">Double</code>s and <code class="language-kotlin">Float</code>s from the standard input.</p> 
+  <pre><code class="language-kotlin">val f = readLine()!!.toFloat()  // Float
+val d = readLine()!!.toDouble() // Double</code></pre> 
+  <p>For example, consider a program that calculates the <code class="language-kotlin">area</code> of a triangle. To find it, the program reads the <code class="language-kotlin">base</code> and the <code class="language-kotlin">height</code> from the standard input, then multiplies them and divides by 2. Note that the base and the height are perpendicular to each other.</p> 
+  <pre><code class="language-kotlin">fun main() {
+    val base = readLine()!!.toDouble()
+    val height = readLine()!!.toDouble()
+
+    val area = (base * height) / 2
+
+    println(area)
+}</code></pre> 
+  <p>Let's calculate the area of a triangle with a base of 3.3 meters and a height of 4.5 meters.</p> 
+  <p><strong>Input 1:</strong></p> 
+  <pre><code class="language-no-highlight">3.3
+4.5</code></pre> 
+  <p><strong>Output 1:</strong></p> 
+  <pre><code class="language-no-highlight">7.425</code></pre> 
+  <p>As you can see, it has an area of 7.425 square meters!</p> 
+  <p><span style="background-color: transparent; color: #000000; font-size: 11pt; font-variant: normal;"></span></p>
+  <div class="alert alert-primary">
+   <strong>Keep in mind</strong> that the output of this program may have a lot of zeroes like the output below because an operation with floating-point numbers can produce inaccurate results.
+   <span style="background-color: transparent; color: #000000; font-size: 11pt; font-variant: normal;"></span>
+  </div>
+  <p></p> 
+  <p><strong>Input 2:</strong></p> 
+  <pre><code class="language-no-highlight">2.2 4.01</code></pre> 
+  <p><strong>Output 2:</strong></p> 
+  <pre><code class="language-no-highlight">4.4110000000000005</code></pre> 
+  <p>It is possible to round or format a double result, but we will not do it in this lesson. In the code challenges, output the result as it is.</p> 
+  <h2 style="text-align: center;">Decimal separator</h2> 
+  <p>If you solve practice lessons locally and your computer has different region settings for keyboard input, these input values may crash the program. Try using <code class="language-kotlin">,</code> as the decimal separator.</p> 
+  <p>If you want to use the dot character without modifying your local settings, you can use this construction:</p> 
+  <pre><code class="language-kotlin">import java.util.Locale
+
+val floatNum = readLine()!!.format(Locale.US).toFloat()</code></pre>
+ </body>
+</html>

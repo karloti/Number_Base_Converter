@@ -1,0 +1,1 @@
+fun solution(elements: MutableSet<Int>, element: Int) = if (elements.contains(element)) mutableSetOf() else elements
